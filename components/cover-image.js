@@ -10,13 +10,11 @@ export default function CoverImage({ title, src, slug, height, width }) {
       className={cn("shadow-sm", {
         "hover:shadow-md transition-shadow duration-200": slug,
       })}
-      layout="intrinsic"
-      width={width}
-      height={height}
+      layout="fill"
     />
   );
   return (
-    <div className="sm:mx-0">
+    <div className="sm:mx-0 aspect-w-3 aspect-h-2">
       {slug ? (
         <Link as={`/posts/${slug}`} href="/posts/[slug]">
           <a aria-label={title}>{image}</a>
